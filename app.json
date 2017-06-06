@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/modules/add/index",
+    "pages/modules/view/index",
+    "pages/modules/census/index",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "AccNotes",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#2fcc85",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/modules/add/index",
+        "text": "记录",
+        "iconPath": "image/add_unselected.png",
+        "selectedIconPath": "image/add_selected.png"
+      },
+      {
+        "pagePath": "pages/modules/view/index",
+        "text": "查看",
+        "iconPath": "image/task_unselected.png",
+        "selectedIconPath": "image/task_selected.png"
+      },
+      {
+        "pagePath": "pages/modules/census/index",
+        "text": "统计",
+        "iconPath": "image/census_unselected.png",
+        "selectedIconPath": "image/census_selected.png"
+      }
+    ]
+  },
+
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+
+  "debug": true
+}

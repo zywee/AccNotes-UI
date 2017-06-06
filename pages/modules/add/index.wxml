@@ -1,0 +1,42 @@
+<view class="add-page">
+  <view class="block-group">
+    <view class="block label">
+      <text>金额</text>
+        <input bindinput="bindFeeInput" class="input static-text" maxlength="100" placeholder="请输入费用金额" value="{{feeItem.amount}}"/>
+    </view>
+  </view>
+
+  <view class="block-group top-gap">
+    <view class="block label">
+      <text>类型</text>
+      <picker bindchange="bindPickerChange" value="{{feeTypeIndex}}" range="{{feeTypeOptions}}">
+        <text class="input static-text">{{feeTypeOptions[feeTypeIndex]}}</text>
+        <image class="arrow-right" src="../../../image/arrow-right.png"/>
+      </picker>
+    </view>
+  </view>
+
+  <view class="block-group">
+    <view class="block label" bindtap="chooseLocation">
+      <text class="key">地点</text>
+      <text class="input static-text">{{feeItem.address}}</text>
+      <image class="arrow-right" src="../../../image/arrow-right.png"/>
+    </view>
+  </view>
+
+  <view class="block-group">
+    <view class="block label">
+      <text>说明</text>
+      <input bindinput="bindMemoInput" class="input static-text" maxlength="100" placeholder="请输入费用说明" value="{{feeItem.memo}}"/>
+    </view>
+  </view>
+  <!-- 提示信息 -->
+  <modal confirm-text="确定"no-confirm  no-cancel hidden="{{modalHidden}}" mask bindconfirm="modalChange">
+  {{modalText}}
+  </modal>
+
+  <!-- 提交按钮 -->
+  <view class="create">
+    <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">记一笔</button>
+  </view>
+</view>
