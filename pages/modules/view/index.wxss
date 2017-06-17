@@ -174,7 +174,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  width: 20%;
+  width: 15%;
 }
 .thead .th .unit{
   font-size: 18rpx;
@@ -195,7 +195,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 20%;
+  width: 15%;
   height: 60rpx;
   overflow: hidden;
 }
@@ -204,6 +204,9 @@
 }
 .tbody .td0 text{
   padding-left: 20rpx;
+}
+.tbody .tr .memo{
+  width: 25%;
 }
 .s-menu{
   display: flex;
@@ -238,7 +241,7 @@
 }
 .late-list .th,.late-list .td{
   width: 25%;
-} 
+}
 .leave-list .th,.leave-list .td,.absent-list .th,.absent-list .td, .ontime-list .th, .ontime-list .td{
   width: 33%;
 }
