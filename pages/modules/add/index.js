@@ -4,13 +4,13 @@ var app = getApp();
 Page({
   data: {
     feeItem: {
-      uuid: '',
       amount: '',
       feeType: '',
       address: '点击选择地点',
       memo: '',
       feeTime: '',
-      feeDate: ''
+      feeDate: '',
+      feeDay: ''
     },
     feeTypeOptions: ['食', '行', '衣', '住'],
     feeTypeIndex: 0,
@@ -83,7 +83,8 @@ Page({
     that.setData({
       openId: openId,
       'feeItem.feeTime': util.getHM(now),
-      'feeItem.feeDate': util.getMD(now),
+      'feeItem.feeDate': util.getYMD(now),
+      'feeItem.feeDay': util.getD(now),
       'feeItem.feeType': this.data.feeTypeOptions[this.data.feeTypeIndex]
     });
 
@@ -108,6 +109,7 @@ Page({
       'feeItem.memo': '',
       'feeItem.feeTime': '',
       'feeItem.feeDate': '',
+      'feeItem.feeDay': '',
       feeTypeIndex: 0,
       openId: '',
       userInfo: {},
@@ -133,11 +135,14 @@ Page({
     if (feeItem.address == '点击选择地点') {
       feeItem.address = '';
     }
-    feeItem.uuid = util.genUUID();
+    var now = new Date();
+    feeItem.feeTime = util.getHM(now);
+    feeItem.feeDate = util.getYMD(now);
+    feeItem.feeDay = util.getD(now);
 
     //调用API从本地缓存中获取数据
     var feeList = wx.getStorageSync('feeList') || [];
-    feeList.unshift(this.data.feeItem);
+    feeList.unshift(feeItem);
     wx.setStorageSync('feeList', feeList);
   },
 

@@ -26,6 +26,12 @@ function getMD(date) {
   return [month, day].map(formatNumber).join('-')
 }
 
+function getD(date) {
+  var day = date.getDate()
+
+  return [day].map(formatNumber)
+}
+
 function getHM(date) {
   var hour = date.getHours()
   var minute = date.getMinutes()
@@ -49,16 +55,11 @@ function isNumber(val) {
   return (/^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(val))
 }
 
-function genUUID() {
-  var uuid = require('../libs/node-uuid/uuid.modified.js'); 
-  return uuid.v1();
-}
-
 module.exports = {
-  genUUID: genUUID,
   formatTime: formatTime,
   getYMD: getYMD,
   getMD: getMD,
+  getD: getD,
   getHM: getHM,
   getW: getW,
   formatNumber: formatNumber,

@@ -9,7 +9,7 @@
     <view class="record-list late-list">
       <view class="thead">
         <view class="th">
-          <text>日期</text>
+          <text>时间</text>
         </view>
         <view class="th">
           <text>金额</text>
@@ -32,6 +32,7 @@
           <block wx:for="{{feeList}}" wx:for-item="item">
             <view class="tr">
               <view class="td">
+                <text>{{item.feeDay}}</text>,
                 <text>{{item.feeTime}}</text>
               </view>
               <view class="td">
